@@ -4,32 +4,20 @@ namespace AppBusco.Models
 {
     public class Registro
     {
-         [Required]
-
-      public string Nombre_del_Producto { get; set;}
-
+       public int Id { get; set; }
         [Required]
+        public string Nombre_del_Producto { get; set; }
 
-        public string Url_Producto { get; set;}
+        public string Url_Producto { get; set; }
 
-          [Required]
+        public string Descripcion { get; set; }
 
-          public string Descripcion { get; set;}
+        public int Precio { get; set; }     
 
-            [Required]
+        public int Celular { get; set; }
 
-            public string Precio  {get; set;}
-        
-              [Required]
+        public string Lugar_De_Compra { get; set; }
 
-              public string Celular { get; set;}
-
-                [Required]
-
-                public string Lugar_De_Compra { get; set;}
-
-                  [Required]
-
-                  public string Nombre { get; set;}
+        public string Nombre { get; set; }
     }
 }

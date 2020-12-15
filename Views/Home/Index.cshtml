@@ -1,8 +1,42 @@
-﻿@{
+﻿@model List<Registro>
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-8">Productos registrados</h1>
+
+
+    <table class="table">
+        <tr>
+            <th>ID</th>
+            <th>Nombre_del_Producto</th>
+            <th>Url_Producto</th>
+            <th>Descripcion</th>
+            <th>Precio</th>
+            <th>Celular</th>
+            <th>Lugar_De_Compra</th>
+            <th>Nombre</th>
+        </tr>
+        @if (Model.Count == 0) {
+            <tr>
+                <td colspan="8" class="text-center">No se encontraron registros.</td>
+            </tr>
+        }
+        @foreach (var contacto in Model) 
+        {
+            <tr>
+                <td>@contacto.Id/td>
+                <td>@contacto.Nombre_del_Producto</td>
+                <td>@contacto.Url_Producto</td>
+                <td>@contacto.Descripcion</td>
+                <td>@contacto.Precio</td>
+                <td>@contacto.Celular</td>
+                <td>@contacto.Lugar_De_Compra</td>
+                <td>@contacto.Nombre</td>
+               
+            </tr>
+        }
+    </table>
 </div>

@@ -27,25 +27,14 @@ namespace AppBusco.Controllers
         }
 
 
-        [HttpPost]
-        public IActionResult Borrar(int id) {
 
-            // Búsqueda del objeto que se quiere borrar usando el id
-            var contacto = _context.Contactos.FirstOrDefault(x => x.Id == id);
-
-            _context.Remove(contacto);
-            _context.SaveChanges();
-
-            return RedirectToAction("Index");
-        }
-
-        public IActionResult Contacto()
+        public IActionResult Registro()
         {
             return View();
         }
 
         [HttpPost]
-        public IActionResult Contacto(Registro c)
+        public IActionResult Registro(Registro c)
         {
             if (ModelState.IsValid) {
 

@@ -11,22 +11,38 @@ namespace AppBusco.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
-        {
-            _logger = logger;
-        }
-
-        public IActionResult Index()
+      public IActionResult Index()
         {
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult Registro()
         {
             return View();
         }
+
+         [HttpPost]
+        public IActionResult Registro(Registro registrar)
+        {
+            if(ModelState.IsValid){
+                 return RedirectToAction("RegistroConfirmacion");
+            }
+
+            return View(registrar);
+           
+        }
+
+        public IActionResult RegistroConfirmacion()
+        {
+            return View();
+        }
+
+         public IActionResult Privacy()
+        {
+            return View();
+        }
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
